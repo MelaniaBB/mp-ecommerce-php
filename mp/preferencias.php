@@ -30,7 +30,7 @@ $item->quantity = 1;
 $item->unit_price = intval($_POST['price']);
 
 $preference->items = array($item);
-$preference->payers = array($payer);
+$preference->payers = $payer;
 
 // Opcional por si quieren quitar métodos de pago de la preferencia
 //$preference->init_point='/mp/checkout.php';
