@@ -1,10 +1,24 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-</head>
+ <?php
 
-<body>
-</body>
-</html>
+http_response_code(200);
+// SDK de Mercado Pago
+require($_SERVER['DOCUMENT_ROOT']. '/vendor/autoload.php');
+require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
+    //MercadoPago\SDK::setAccessToken("ENV_ACCESS_TOKEN");
+
+    switch($_POST["type"]) {
+        case "payment":
+            $payment = MercadoPago\Payment.find_by_id($_POST["id"]);
+            break;
+        case "plan":
+            $plan = MercadoPago\Plan.find_by_id($_POST["id"]);
+            break;
+        case "subscription":
+            $plan = MercadoPago\Subscription.find_by_id($_POST["id"]);
+            break;
+        case "invoice":
+            $plan = MercadoPago\Invoice.find_by_id($_POST["id"]);
+            break;
+    }
+var_dump($_POST[]);
+?>
