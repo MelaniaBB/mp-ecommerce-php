@@ -149,14 +149,14 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
 									
 									?>
 									<form action="" method="POST" class="pull-right btn-default">
-										<?php /*?><a href="<?php echo $preference->init_point; ?>">Pagar con Mercado Pago</a><?php */?>
-											<style>.mercadopago-button { background: #FF3C3C;}</style>
+										<a href="<?php echo $preference->init_point; ?>">Pagar con Mercado Pago</a>
+											<?php /*?><style>.mercadopago-button { background: #FF3C3C;}</style>
 										  <script
 										   src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
 										   data-preference-id="<?php echo $preference->id; ?>" data-label="PAGAR LA COMPRA"  data-color="#FF3C3C" data-elements-color="#FF3C3C" data-button-color="#FF3C3C" data-header-color="#FF3C3C">
 											  
 											  
-										  </script>
+										  </script><?php */?>
 										</form>
 									
                                 </div>
@@ -167,13 +167,7 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
             </div>
         </div>
 		
-	<form action="https://www.mi-sitio.com/procesar-pago" method="POST">
-  <script
-    src="https://www.mercadopago.com.ar/integrations/v1/web-tokenize-checkout.js"
-    data-public-key="APP_USR-7eb0138a-189f-4bec-87d1-c0504ead5626"
-    data-transaction-amount="100.00">
-  </script>
-</form>
+	
         <div role="alert" class="as-loader-text ally" aria-live="assertive"></div>
         <div class="as-footnotes">
             <div class="as-footnotes-content">
