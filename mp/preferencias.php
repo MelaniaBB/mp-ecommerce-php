@@ -25,7 +25,7 @@ $item->id = 1234;
 $item->title = $_POST['title'];
 $item->currency_id = 'ARS';
 $item->description = 'Dispositivo móvil de Tienda e-commerce';
-$item->picture_url = 'https://melaniabb-mp-ecommerce-php.herokuapp.com/assets/'.$_POST['img'];
+$item->picture_url = $imgProducto;
 $item->quantity = 1;
 $item->unit_price = intval($_POST['price']);
 
