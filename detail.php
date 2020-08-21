@@ -166,8 +166,12 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
             </div>
         </div>
 		
-		<form action="https://www.mi-sitio.com/procesar-pago" method="POST">
-  
+	<form action="https://www.mi-sitio.com/procesar-pago" method="POST">
+  <script
+    src="https://www.mercadopago.com.mx/integrations/v1/web-tokenize-checkout.js"
+    data-public-key="ENV_PUBLIC_KEY"
+    data-transaction-amount="100.00">
+  </script>
 </form>
         <div role="alert" class="as-loader-text ally" aria-live="assertive"></div>
         <div class="as-footnotes">
