@@ -9,7 +9,7 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
 
 //$info = json_decode($post);
 
-    switch($_POST["type"]) {
+   /* switch($_POST["type"]) {
         case "payment":
             $payment = MercadoPago\Payment.find_by_id($_POST["id"]);
             break;
@@ -22,7 +22,7 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
         case "invoice":
             $plan = MercadoPago\Invoice.find_by_id($_POST["id"]);
             break;	
-    }
+    }*/
 
  switch($_GET["topic"]) {
         case "payment":
