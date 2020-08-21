@@ -4,6 +4,7 @@
 require($_SERVER['DOCUMENT_ROOT']. '/vendor/autoload.php');
 require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
 
+
 ?>
 
 <!DOCTYPE html>
@@ -142,13 +143,13 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
 									
 									<?php
 									//PREFERENCIAS
+	
 									require($_SERVER['DOCUMENT_ROOT'].'/mp/preferencias.php');
 									
 									
 									?>
-									
 									<form action="/procesar-pago" method="POST" class="pull-right btn-default">
-										<a href="<?php echo $preference->init_point; ?>">Pagar con Mercado Pago</a>
+										<?php /*?><a href="<?php echo $preference->init_point; ?>">Pagar con Mercado Pago</a><?php */?>
 											<style>.mercadopago-button { background: #FF3C3C;}</style>
 										  <script
 										   src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
@@ -168,8 +169,8 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
 		
 	<form action="https://www.mi-sitio.com/procesar-pago" method="POST">
   <script
-    src="https://www.mercadopago.com.mx/integrations/v1/web-tokenize-checkout.js"
-    data-public-key="ENV_PUBLIC_KEY"
+    src="https://www.mercadopago.com.ar/integrations/v1/web-tokenize-checkout.js"
+    data-public-key="APP_USR-7eb0138a-189f-4bec-87d1-c0504ead5626"
     data-transaction-amount="100.00">
   </script>
 </form>
