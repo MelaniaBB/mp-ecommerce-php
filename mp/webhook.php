@@ -7,12 +7,12 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
     //MercadoPago\SDK::setAccessToken("ENV_ACCESS_TOKEN");
 $fh = fopen("logMP.txt", 'a') or die("Se produjo un error al crear el archivo");
 
-$texto = date('Y-m-d h:i:sa')." --> TOPIC: ".$_POST["topic"]." --> ID: ".$_POST["id"];
+$texto = date('Y-m-d h:i:sa')." --> TOPIC: ".$_GET["topic"]." --> ID: ".$_GET["id"];
 
 fwrite($fh, $texto.PHP_EOL) or die("No se pudo escribir en el archivo");
 
 fclose($fh);
-    switch($_POST["topic"]) {
+    switch($_GET["topic"]) {
         case "payment":
             $payment = MercadoPago\Payment.find_by_id($_POST["id"]);
             break;
@@ -26,5 +26,5 @@ fclose($fh);
             $plan = MercadoPago\Invoice.find_by_id($_POST["id"]);
             break;
     }
-//var_dump($_POST[]);
+var_dump($_POST[]);
 ?>
