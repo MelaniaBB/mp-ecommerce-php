@@ -144,7 +144,7 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
 									<?php
 									$imgProducto = str_replace("./assets/", "https://melaniabb-mp-ecommerce-php.herokuapp.com/assets/", $_POST["img"]);
 									//PREFERENCIAS
-									//echo $imgProducto;
+									echo $imgProducto;
 									require($_SERVER['DOCUMENT_ROOT'].'/mp/preferencias.php');
 									
 									
