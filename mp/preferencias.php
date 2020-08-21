@@ -65,7 +65,7 @@ $preference->external_reference = 'melania@infinitoweb.com.ar';
 
 
 // Opcional para setear las url del webhook
-$preference->notification_url = $_SERVER['HTTP_HOST'].'/mp/webhook.php';
+$preference->notification_url = 'https://melaniabb-mp-ecommerce-php.herokuapp.com/mp/webhook.php';
 
 // Crea la preferencia
 $preference->save();
