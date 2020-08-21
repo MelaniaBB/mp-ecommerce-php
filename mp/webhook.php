@@ -9,7 +9,7 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
 
 //$info = json_decode($post);
 
-   /* switch($_POST["type"]) {
+    switch($_POST["type"]) {
         case "payment":
             $payment = MercadoPago\Payment.find_by_id($_POST["id"]);
             break;
@@ -22,9 +22,15 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
         case "invoice":
             $plan = MercadoPago\Invoice.find_by_id($_POST["id"]);
             break;	
-    }*/
+    }
 
- switch($_GET["topic"]) {
+$fh = fopen("logMP.txt", 'a+') or die("Se produjo un error al crear el archivo");
+$texto = date('Y-m-d h:i:sa')." --> TOPIC: ".$_POST["topic"]." --> TYPE: ".$_POST["type"]." --> ID: ".$_POST["id"];
+
+fwrite($fh, $texto.PHP_EOL) or die("No se pudo escribir en el archivo");
+
+fclose($fh);
+ /*switch($_GET["topic"]) {
         case "payment":
             $payment = MercadoPago\Payment::find_by_id($_GET["id"]);
             break;
@@ -40,6 +46,6 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
 		    case "merchant_order":
       		$merchant_order = MercadoPago\MerchantOrder::find_by_id($_GET["id"]);
 		 	break; 
-    }
-var_dump($payment);
+    }*/
+//var_dump($payment);
 ?>
