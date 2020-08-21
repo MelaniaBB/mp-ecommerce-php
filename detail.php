@@ -142,8 +142,9 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
                                     <?php /*?><button type="submit" class="mercadopago-button" formmethod="post">Pagar</button><?php */?>
 									
 									<?php
+									$imgProducto = str_replace("./assets/", "https://melaniabb-mp-ecommerce-php.herokuapp.com/assets/", $_POST["img"]);
 									//PREFERENCIAS
-	
+									//echo $imgProducto;
 									require($_SERVER['DOCUMENT_ROOT'].'/mp/preferencias.php');
 									
 									
