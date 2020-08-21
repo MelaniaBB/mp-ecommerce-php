@@ -28,23 +28,23 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
  switch($_GET["topic"]) {
         case "payment":
             $payment = MercadoPago\Payment::find_by_id($_GET["id"]);
-		 	$mostrar = json_decode($payment);
+		 	$mostrar = $payment;
             break;
         case "plan":
             $plan = MercadoPago\Plan::find_by_id($_GET["id"]);
-		 	$mostrar = json_decode($plan);
+		 	$mostrar = $plan;
             break;
         case "subscription":
             $plan = MercadoPago\Subscription::find_by_id($_GET["id"]);
-		 	$mostrar = json_decode($plan);
+		 	$mostrar = $plan;
             break;
         case "invoice":
             $plan = MercadoPago\Invoice::find_by_id($_GET["id"]);
-		 	$mostrar = json_decode($plan);
+		 	$mostrar = $plan;
             break;
 		    case "merchant_order":
       		$merchant_order = MercadoPago\MerchantOrder::find_by_id($_GET["id"]);
-		    $mostrar = json_decode($merchant_order);
+		    $mostrar = $merchant_order;
 		 	break; 
     }
 
