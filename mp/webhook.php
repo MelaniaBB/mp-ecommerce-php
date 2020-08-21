@@ -5,9 +5,12 @@ http_response_code(200);
 require($_SERVER['DOCUMENT_ROOT']. '/vendor/autoload.php');
 require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
     //MercadoPago\SDK::setAccessToken("ENV_ACCESS_TOKEN");
+
+
+//$info = json_decode($post);
 $fh = fopen("logMP.txt", 'a') or die("Se produjo un error al crear el archivo");
 
-$texto = date('Y-m-d h:i:sa')." --> TOPIC: ".$_POST["type"]." --> ID: ".$_POST["id"];
+$texto = date('Y-m-d h:i:sa')." --> TOPIC: ".$_POST["type"]." --> ID: ".$_POST["id"]." --> ".$_POST;
 
 fwrite($fh, $texto.PHP_EOL) or die("No se pudo escribir en el archivo");
 
