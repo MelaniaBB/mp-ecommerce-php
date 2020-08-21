@@ -6,9 +6,9 @@ $preference = new MercadoPago\Preference();
 $payer = new MercadoPago\Payer();
 $payer->name = "Lalo";
 $payer->surname = "Landa";
-//$payer->email = "test_user_63274575@testuser.com";
-$payer->email = "test_user_28915056@testuser.com";
-//$payer->date_created = new DateTime();
+$payer->email = "test_user_63274575@testuser.com";
+//$payer->email = "test_user_28915056@testuser.com";
+$payer->date_created = new DateTime();
 $payer->phone = array(
 	"area_code" => "11",
 	"number" => '22223333'
@@ -23,7 +23,7 @@ $payer->address = array(
 $item = new MercadoPago\Item();
 $item->id = 1234;
 $item->title = $_POST['title'];
-//$item->currency_id = 'ARS';
+$item->currency_id = 'ARS';
 $item->description = 'Dispositivo móvil de Tienda e-commerce';
 $item->picture_url = $_POST['img'];
 $item->quantity = 1;
@@ -68,4 +68,6 @@ $preference->notification_url = $_SERVER['HTTP_HOST'].'/mp/webhook.php';
 
 // Crea la preferencia
 $preference->save();
+
+var_dump($preference);
 ?>
