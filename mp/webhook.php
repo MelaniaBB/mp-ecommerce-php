@@ -26,16 +26,16 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
 
  switch($_GET["topic"]) {
         case "payment":
-            $payment = MercadoPago\Payment.find_by_id($_GET["id"]);
+            $payment = MercadoPago\Payment::find_by_id($_GET["id"]);
             break;
         case "plan":
-            $plan = MercadoPago\Plan.find_by_id($_GET["id"]);
+            $plan = MercadoPago\Plan::find_by_id($_GET["id"]);
             break;
         case "subscription":
-            $plan = MercadoPago\Subscription.find_by_id($_GET["id"]);
+            $plan = MercadoPago\Subscription::find_by_id($_GET["id"]);
             break;
         case "invoice":
-            $plan = MercadoPago\Invoice.find_by_id($_GET["id"]);
+            $plan = MercadoPago\Invoice::find_by_id($_GET["id"]);
             break;
 		    case "merchant_order":
       		$merchant_order = MercadoPago\MerchantOrder::find_by_id($_GET["id"]);
