@@ -25,11 +25,12 @@ $item->id = 1234;
 $item->title = $_POST['title'];
 $item->currency_id = 'ARS';
 $item->description = 'Dispositivo móvil de Tienda e-commerce';
-$item->picture_url = $_POST['img'];
+$item->picture_url = 'https://melaniabb-mp-ecommerce-php.herokuapp.com/assets/'.$_POST['img'];
 $item->quantity = 1;
 $item->unit_price = intval($_POST['price']);
 
 $preference->items = array($item);
+$preference->payer = array($payer);
 
 // Opcional por si quieren quitar métodos de pago de la preferencia
 //$preference->init_point='/mp/checkout.php';
