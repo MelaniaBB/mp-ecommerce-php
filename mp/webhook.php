@@ -15,7 +15,7 @@ $fh = fopen("logMP.txt", 'a') or die("Se produjo un error al crear el archivo");
 
 
 fclose($fh);
-    switch($_GET["type"]) {
+    switch($_GET["topic"]) {
         case "payment":
             $payment = MercadoPago\Payment.find_by_id($_POST["id"]);
             break;
