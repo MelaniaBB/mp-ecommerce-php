@@ -14,8 +14,6 @@ $fh = fopen("logMP.txt", 'a') or die("Se produjo un error al crear el archivo");
 
 
 
-fwrite($fh, $texto.PHP_EOL) or die("No se pudo escribir en el archivo");
-
 fclose($fh);
     switch($_GET["type"]) {
         case "payment":
@@ -35,4 +33,6 @@ fclose($fh);
 			break;	
     }
 $texto = date('Y-m-d h:i:sa')." --> TOPIC: ".$_GET["topic"]." --> ID: ".$_GET["id"]." --> ".$merchant_order;
+
+fwrite($fh, $texto.PHP_EOL) or die("No se pudo escribir en el archivo");
 ?>
