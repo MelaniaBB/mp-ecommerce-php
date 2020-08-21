@@ -148,8 +148,9 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
 									
 									
 									?>
+									
 									<form action="" method="POST" class="pull-right btn-default">
-										<a href="<?php echo $preference->init_point; ?>">Pagar con Mercado Pago</a>
+										<a href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
 											<?php /*?><style>.mercadopago-button { background: #FF3C3C;}</style>
 										  <script
 										   src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
