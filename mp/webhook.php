@@ -10,9 +10,9 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
 //$info = json_decode($post);
 $fh = fopen("logMP.txt", 'a') or die("Se produjo un error al crear el archivo");
 
-$data = json_decode(file_get_contents($_GET), true);
+//$data = json_decode(file_get_contents($_GET), true);
 
-$texto = date('Y-m-d h:i:sa')." --> TOPIC: ".$_GET["topic"]." --> ID: ".$_GET["id"]." --> ".$data;
+
 
 fwrite($fh, $texto.PHP_EOL) or die("No se pudo escribir en el archivo");
 
@@ -30,6 +30,9 @@ fclose($fh);
         case "invoice":
             $plan = MercadoPago\Invoice.find_by_id($_POST["id"]);
             break;
+		case "merchant_order":
+			$merchant_order = MercadoPago\MerchantOrder::find_by_id($_GET["id"]);
+			break;	
     }
-
+$texto = date('Y-m-d h:i:sa')." --> TOPIC: ".$_GET["topic"]." --> ID: ".$_GET["id"]." --> ".$merchant_order;
 ?>
