@@ -23,13 +23,12 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
             $plan = MercadoPago\Invoice.find_by_id($_POST["id"]);
             break;	
     }
-$fh = fopen("logMP.txt", 'a+') or die("Se produjo un error al crear el archivo");
-
-//$data = json_decode(file_get_contents($_GET), true);
-
-$texto = date('Y-m-d h:i:sa')." --> TOPIC: ".$_POST["type"]." --> ID: ".$_POST["id"];
-
-fwrite($fh, $texto.PHP_EOL) or die("No se pudo escribir en el archivo");
-
-fclose($fh);
+function logfile($str){
+    $file='logMP.txt';
+    $myfile = fopen("/logMP.txt", "a+") or die("Unable to open file!");
+    fwrite($myfile, $str);
+    fclose($myfile);
+}
+$notifications=file_get_contents("php://input");
+logfile($notifications);
 ?>
