@@ -69,5 +69,5 @@ $preference->notification_url = $_SERVER['HTTP_HOST'].'/mp/webhook.php';
 // Crea la preferencia
 $preference->save();
 
-var_dump($preference);
+//var_dump($preference);
 ?>
