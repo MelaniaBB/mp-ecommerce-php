@@ -25,44 +25,37 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
     }*/
  
 
-
+$json = file_get_contents('php://input');
 $filepost = "webhokpost.json";
-file_put_contents($filepost, $POST, FILE_APPEND);
+file_put_contents($filepost, $json, FILE_APPEND);
 
-$numero = count($_GET);
-$tags = array_keys($_GET);// obtiene los nombres de las varibles
-$valores = array_values($_GET);// obtiene los valores de las varibles
+
  switch($_GET["topic"]) {
         case "payment":
             $payment = MercadoPago\Payment::find_by_id($_GET["id"]);
 		 	
-		 	$fileget = "webhokget.json";
-		 	file_put_contents($fileget, $payment, FILE_APPEND);
+		 	
             break;
         case "plan":
             $plan = MercadoPago\Plan::find_by_id($_GET["id"]);
-		 	$fileget = "webhokget.json";
-		 	file_put_contents($fileget, $plan, FILE_APPEND);
+		 	
             break;
         case "subscription":
             $plan = MercadoPago\Subscription::find_by_id($_GET["id"]);
-		 	$fileget = "webhokget.json";
-		 	file_put_contents($fileget, $plan, FILE_APPEND);
+		 	
             break;
         case "invoice":
             $plan = MercadoPago\Invoice::find_by_id($_GET["id"]);
-		 	$fileget = "webhokget.json";
-		 	file_put_contents($fileget, $plan, FILE_APPEND);
+		 	
             break;
 		    case "merchant_order":
       		$merchant_order = MercadoPago\MerchantOrder::find_by_id($_GET["id"]);
-		    $fileget = "webhokget.json";
-		 	file_put_contents($fileget, $merchant_order, FILE_APPEND);
+		   
 		 	break; 
     }
 
 $fh = fopen("logMP.txt", 'a+') or die("Se produjo un error al crear el archivo");
-$texto = date('Y-m-d h:i:sa')." --> TOPIC: ".$_GET["topic"]." --> TYPE: ".$_POST["type"]." --> cant get: ".$numero." --> nombre: ".$tags."--> Valores: ".$valores;
+$texto = date('Y-m-d h:i:sa')." --> TOPIC: ".$_GET["topic"]." --> TYPE: ".$_POST["type"];
 
 fwrite($fh, $texto.PHP_EOL) or die("No se pudo escribir en el archivo");
 
