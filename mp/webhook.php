@@ -25,10 +25,10 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
     }*/
  
 $fileget = "webhokget.json";
-file_put_contents($GET, $fileget, FILE_APPEND);
+file_put_contents($fileget, $GET, FILE_APPEND);
 
 $filepost = "webhokpost.json";
-file_put_contents($POST, $filepost, FILE_APPEND);
+file_put_contents($filepost, $POST, FILE_APPEND);
 
  
  switch($_GET["topic"]) {
