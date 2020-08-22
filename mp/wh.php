@@ -12,7 +12,7 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
     switch($_GET["topic"]) {
         case "payment":
             $payment = MercadoPago\Payment.find_by_id($_GET["id"]);
-			var_dump($payment);
+			
             break;
         case "plan":
             $plan = MercadoPago\Plan.find_by_id($_GET["id"]);
@@ -25,7 +25,7 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
             break;
 		case "merchant_order":
 			$merchant_order = MercadoPago\MerchantOrder::find_by_id($_GET["id"]);
-			var_dump($merchant_order);
+			
 			break;	
     }
 /*$fh = fopen("logMP.txt", 'a+') or die("Se produjo un error al crear el archivo");
@@ -38,5 +38,5 @@ fwrite($fh, $texto.PHP_EOL) or die("No se pudo escribir en el archivo");
 
 fclose($fh);*/
 
-
+var_dump($payment);
 ?>
