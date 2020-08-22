@@ -23,8 +23,14 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
             $plan = MercadoPago\Invoice.find_by_id($_POST["id"]);
             break;	
     }*/
+ 
+$fileget = "webhokget.json";
+file_put_contents($GET, $fileget, FILE_APPEND);
 
- $info = json_decode($GET);
+$filepost = "webhokpost.json";
+file_put_contents($POST, $filepost, FILE_APPEND);
+
+ 
  switch($_GET["topic"]) {
         case "payment":
             $payment = MercadoPago\Payment::find_by_id($_GET["id"]);
