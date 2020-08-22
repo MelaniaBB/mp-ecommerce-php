@@ -16,7 +16,7 @@ require($_SERVER['DOCUMENT_ROOT']. '/mp/credencialesMP.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="format-detection" content="telephone=no">
 	
-	<script src="https://www.mercadopago.com/v2/security.js" view=""></script>
+	<script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
     <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
